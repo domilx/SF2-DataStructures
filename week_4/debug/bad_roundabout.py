@@ -52,4 +52,4 @@ for j in range(num_routes):
     elif current_diam == min_diam:
         diameters_lst.append(id)
         
-print(f'{min_diam} {diameters_lst}')
+print(f'{min_diam} {{{", ".join(map(str, diameters_lst))}}}')
