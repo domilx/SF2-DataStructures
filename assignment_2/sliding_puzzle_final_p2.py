@@ -100,7 +100,6 @@ def makeMove(board, move):
     elif move == "d":
         board[y][x] = board[y][x-1]
         board[y][x-1] = "  "
-    return board
 
 def clearScreen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -118,7 +117,7 @@ def __main__():
     limit = 31 if n == 3 else (80 if n == 4 else 999)
     for _ in range(limit):
         move = nextMove(board)
-        board = makeMove(board, move)
+        makeMove(board, move)
         clearScreen()
         displayBoard(board)
         flat_board = [tile for row in board for tile in row]
