@@ -17,6 +17,6 @@ He was a true hero, and his legend grew with each passing day. He then went on t
 
 Prince Leo's legacy lived on long after his time. Stories of his kindness, bravery, and cool demeanor were passed down through generations. The kingdom flourished under his rule, and his legend became a beacon of hope and inspiration for all.
 
-And so, the tale of the tall prince with wonderful blond hair continues to be told, reminding everyone that true greatness comes from within.
+And so, the tale of the all prince with wonderful blond hair continues to be told, reminding everyone that true greatness comes from within.
 
 Made with love by Leo
