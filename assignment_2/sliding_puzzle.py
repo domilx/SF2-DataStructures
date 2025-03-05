@@ -1,5 +1,10 @@
+# Domenico Valentino
+# 2432975
+# Part 2 (NOTHING CHANGED FROM PART 1)
+
 import random
 import sys
+import os
 
 def displayBoard(board_lst):
     n = len(board_lst)
@@ -75,11 +80,53 @@ def nextMove(board):
 
         ans = input("> ")
         if ans.lower() == "quit":
+            print("quitter, ok then, I see how it is")
             sys.exit()
         if ans.lower() in good:
             return(ans)
 
+def makeMove(board, move):
+    y, x = findEmptyTile(board)
+    print(move)
+    if move == "w":
+        board[y][x] = board[y+1][x]
+        board[y+1][x] = "  "
+    elif move == "a":
+        board[y][x] = board[y][x+1]
+        board[y][x+1] = "  "
+    elif move == "s":
+        board[y][x] = board[y-1][x]
+        board[y-1][x] = "  "
+    elif move == "d":
+        board[y][x] = board[y][x-1]
+        board[y][x-1] = "  "
+    return board
 
-puzzle = getNewPuzzle(4)
-displayBoard(puzzle)
-print(nextMove(puzzle))
+def clearScreen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def __main__():
+    clearScreen()
+    print("Welcome to the sliding puzzle game!")
+    print("Use W/A/S/D to move a tile into the empty space, or QUIT to exit.")
+
+    n = int(input("Enter the board dimension (3 or 4 recommended): "))
+    board = getNewPuzzle(n)
+    clearScreen()
+    displayBoard(board)
+
+    limit = 31 if n == 3 else (80 if n == 4 else 999)
+    for _ in range(limit):
+        move = nextMove(board)
+        board = makeMove(board, move)
+        clearScreen()
+        displayBoard(board)
+        flat_board = [tile for row in board for tile in row]
+        if flat_board == tileLabels(n):
+            print("Congratulations! You solved the puzzle!")
+            break
+    else:
+        print("Best of luck next time!")
+
+if __name__ == "__main__":
+    __main__()

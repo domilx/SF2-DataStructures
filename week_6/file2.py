@@ -85,7 +85,7 @@ d2 = {"a": [7, 8, 9], "b": [10, 11, 12]}
 print(combine(d1, d2))
 
 
-def combine2(d1, d2):
+def combine2(d1, wd2):
     """
     return dictionary where each ley is a key that is a key in the values of d1 and d2
     The value associated with each key in the new dictionary is the sum of all the new integers
