@@ -1,2 +1,2 @@
 as asked, here is the git link to the assignment 2
-https://github.com/domilx/SF2-DataStructures/assignment_2/
+https://github.com/domilx/SF2-DataStructures/tree/main/assignment_2
