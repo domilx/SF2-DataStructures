@@ -1,0 +1,5 @@
+open("week_10/student_record.json", "r")
+# data = json.load(input_file)
+# input_file.close()
+# print(data)
+# print(type(data))
