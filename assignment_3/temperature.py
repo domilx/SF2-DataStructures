@@ -1,3 +1,7 @@
+# Domenico Valentino
+# 2432975
+# Assignment 3 Part 1
+
 """
 1. (time estimate: 5 minutes) Write a function called toCelsius that takes a temperature in
 Fahrenheit and returns the corresponding temperature in Celsius rounded to 2 decimal places.
@@ -80,3 +84,47 @@ for line in file:
         celsius_temperatures = list(map(toCelsius, temperatures))  
         temp_dict[year] = celsius_temperatures
 file.close()
+
+# Assignment 3 Part 2
+
+"""
+Write a function belowFreezing that takes a dictionary (of same format as you read from the
+data.txt file) and returns all months that have had a temperature value below freezing in
+some year. On the given data, the output should be the months of January, February, March and
+December
+"""
+def belowFreezing(d: dict):
+    month_names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    months_below = set()
+    for year in d:
+        for i, temp in enumerate(d[year]):
+            if temp < 0:
+                months_below.add(i)
+    result = []
+    for i in range(len(month_names)):
+        if i in months_below:
+            result.append(month_names[i])
+    return result
+"""
+In your main program you are to write to a file called data_celsius.txt. Create this file
+for writing using Python (don’t manually create the file in the folder).
+    In data_celsius.txt the first 4 lines are the same as the 4 lines in data.txt. Do not
+copy and paste these 4 lines. Write Python code that automates this process for you.
+    The next 12 lines are the 12 key-value pairs from your temp_dict. When you write this
+data to your file, make sure the display format and spacing in data_celsius.txt is the
+same as that of data.txt.
+"""
+infile = open('assignment_3/data.txt', 'r')
+header_lines = [next(infile) for _ in range(4)]
+infile.close()
+outfile = open('data_celsius.txt', 'w')
+outfile.writelines(header_lines)
+for year in temp_dict.keys():
+    temp_list = []
+    for temp in temp_dict[year]:
+        formatted_temp = str(round(temp, 2))
+        temp_list.append(formatted_temp)
+    temps_str = " ".join(temp_list)
+    line = str(year) + " " + temps_str + "\n"
+    outfile.write(line)
+outfile.close()
