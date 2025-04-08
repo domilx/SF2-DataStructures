@@ -98,7 +98,7 @@ def belowFreezing(d: dict):
     months_below = set()
     for year in d:
         for i, temp in enumerate(d[year]):
-            if temp < 0:
+            if toCelsius(temp) < 0:
                 months_below.add(i)
     result = []
     for i in range(len(month_names)):
