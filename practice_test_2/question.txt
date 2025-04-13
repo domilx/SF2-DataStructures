@@ -1,0 +1,39 @@
+Exam Test #2 – Quest Filter Challenge
+
+Story:
+In the Kingdom of Louisa, quests are recorded in the JSON file "quests.json".
+Each quest is represented as a dictionary with the keys:
+  - "name": a string
+  - "difficulty": an integer from 1 to 10
+  - "participants": a list of strings (names)
+
+The JSON file holds a list of such quest dictionaries.
+
+Task:
+Write a Python program that does the following:
+1. Attempts to open and read "quests.json". If the file does not exist or contains invalid JSON,
+   print "Error reading file" and exit.
+2. Define a Quest class with attributes for name, difficulty, and participants.
+   Override relational operators (at minimum __lt__) so Quest objects compare based on difficulty.
+3. Prompt the user to enter an integer threshold.
+4. Filter out quests whose difficulty is less than the threshold.
+5. Sort the filtered quests by increasing difficulty.
+6. Print:
+   - A list of the names of the filtered quests (in order of difficulty).
+   - A set of all unique participants from these quests.
+
+Constraints:
+- Do not use list comprehensions, filter, map, enumerate, the "with" statement to open files, or global variables.
+
+Example:
+Given "quests.json" contains:
+[
+  {"name": "Complete Assignment", "difficulty": 8, "participants": ["Leo", "Rowan"]},
+  {"name": "Write better code than Rowan", "difficulty": 1, "participants": ["Domenico", "Leo"]},
+  {"name": "Listen in class without going on phone every 9 seconds", "difficulty": 6, "participants": ["Domenico", "Rowan"]}
+]
+And the user enters: 6
+
+The program should output:
+Filtered quests: ['Listen in class without going on phone every 9 seconds', 'Complete Assignment']
+Unique participants: {'Leo', 'Rowan', 'Domenico'}
