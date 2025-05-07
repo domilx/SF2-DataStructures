@@ -1,4 +1,4 @@
-from assignment_4 import Heterotroph
+from heterotroph import Heterotroph
 
 
 class Herbivore(Heterotroph):
@@ -9,5 +9,5 @@ class Herbivore(Heterotroph):
         )
 
     def eat(self) -> None:
-        print("I eat other organisms instead of generating my own food.")
+        super().eat()
         print("I eat plants.")
